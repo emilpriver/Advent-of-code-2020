@@ -201,8 +201,8 @@ choices = [1974,
            1939,
            1743]
 
-for first_choice in choices:
-    for second_choice in choices:
+for index, first_choice in enumerate(choices):
+    for second_choice in choices[index:]:
         for third_choice in choices:
             sum_of_selected_numbers = first_choice + second_choice + third_choice
             if sum_of_selected_numbers == 2020:

@@ -201,8 +201,8 @@ choices = [1974,
            1939,
            1743]
 
-for first_choice in choices:
-    for second_choice in choices:
+for index, first_choice in enumerate(choices):
+    for second_choice in choices[index:]:
         if second_choice + first_choice == 2020:
             print(f"{first_choice} and {second_choice} sum is 2020")
             print(
