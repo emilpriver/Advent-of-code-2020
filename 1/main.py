@@ -1,4 +1,4 @@
-""" Advent of code #2 """
+""" Advent of code day 2 part 1 """
 from itertools import combinations
 
 with open('input.txt') as text_file:
@@ -10,3 +10,5 @@ with open('input.txt') as text_file:
                 print(f"{first_choice} and {second_choice} sum is 2020")
                 print(
                     f"Multiplying {first_choice} and {second_choice} is {first_choice * second_choice}")
+
+    text_file.close()
