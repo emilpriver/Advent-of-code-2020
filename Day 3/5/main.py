@@ -1,21 +1,31 @@
-""" Advent of code day 3 part 1 """
+""" Advent of code day 3 part 2 """
 
 with open("input.txt") as text_file:
   lines = list(text_file.readlines())
-  total_tress = 0
-  x = 3
+  total_tress = 1
+  slopes = [[1,1], [3, 1],[5, 1],[7, 1],[1, 2]]
 
-  for (index, line) in enumerate(lines):
-    line = line.strip("\n")
-    if index == 0:
-      continue
+  for slope in slopes:
+    slope_trees = 0
+    x = slope[0]
+    y = slope[1]
 
-    if line[x] == "#":
-      total_tress += 1
+    for (index, line) in enumerate(lines[::y]):
+      line = line.strip("\n")
+      if index == 0:
+        continue
 
-    x += 3
+      if y == 2:
+        print(line)
 
-    if len(line) <= x:
-      x = x - len(line)
+      if line[x] == "#":
+        slope_trees += 1
+
+      x += slope[0]
+
+      if len(line) <= x:
+        x = x - len(line)
+
+    total_tress *= slope_trees
 
   print(total_tress)
