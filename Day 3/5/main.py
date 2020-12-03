@@ -15,9 +15,6 @@ with open("input.txt") as text_file:
       if index == 0:
         continue
 
-      if y == 2:
-        print(line)
-
       if line[x] == "#":
         slope_trees += 1
 
